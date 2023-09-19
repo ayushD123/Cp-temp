@@ -26,7 +26,7 @@ struct segmenttree {
 
 		// right subtree is (mid+1,ending)
 		build(mid + 1, ending, 2 * node + 2, v);
-
+		//after filling all leaf nodes while backtracking fill parent
 		st[node] = st[node * 2 + 1] + st[node * 2 + 2];
 	}
 
@@ -66,7 +66,7 @@ struct segmenttree {
 			// right
 			update(mid + 1, ending, 2 * node + 2, index, value);
 		}
-
+		//backtracking step to update all its ancestors
 		st[node] = st[node * 2 + 1] + st[node * 2 + 2];
 
 		return;
